@@ -1,0 +1,36 @@
+Change Component Footprint: Designator=C16 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C18 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C20 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C22 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C24 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found Linear reagulator SMD AMS1117 - duplicate
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Add Pin To Net: Unknown Pin: Pin C32-1
+Add Pin To Net: Unknown Pin: Pin C32-2
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin D3-1
+Add Pin To Net: Unknown Pin: Pin D3-2
+Add Pin To Net: Unknown Pin: Pin U9-1
+Add Pin To Net: Unknown Pin: Pin U9-2
+Add Pin To Net: Unknown Pin: Pin U9-3
+Add Class Member: Failed to add class member : Component C2 47uF
+Add Class Member: Failed to add class member : Component C3 47uF
+Add Class Member: Failed to add class member : Component C9 47uF
+Add Class Member: Failed to add class member : Component C10 47uF
+Add Class Member: Failed to add class member : Component C32 10uF
+Add Class Member: Failed to add class member : Component U9 AMS1117

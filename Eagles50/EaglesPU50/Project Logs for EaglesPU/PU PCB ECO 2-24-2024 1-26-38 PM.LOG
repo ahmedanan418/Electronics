@@ -1,0 +1,22 @@
+Change Component Comment : Designator=D3 Old Comment=750mV@10A New Comment=850mV@10A
+Change component parameters: Designator = "D3" ("D3"); Footprint = "TO-277"; UniqueID = "\JRVUVDJF" ("\JRVUVDJF")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "MDD(Microdiode Electronics)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part number"; Value = "SB10100L"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number"; Value = "C113946"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Vf@If"; Value = "850mV@10A"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found Linear reagulator SMD AMS1117 - duplicate
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Added Pin To Net: NetName=+24V Pin=D3-C
+Add Pin To Net: Unknown Pin: Pin U9-1
+Add Pin To Net: Unknown Pin: Pin U9-2
+Add Pin To Net: Unknown Pin: Pin U9-3
+Added Pin To Net: NetName=NetD3_A Pin=D3-A
+Added Pin To Net: NetName=NetD3_A Pin=D3-A
+Added Pin To Net: NetName=NetD3_A Pin=L3-1
+Added Pin To Net: NetName=NetD3_A Pin=U8-1
+Added Net: Name=NetD3_A
+Add Class Member: Failed to add class member : Component U9 AMS1117

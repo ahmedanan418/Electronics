@@ -1,0 +1,37 @@
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Added Component: Designator=C32(CAP Ceramic SMD 1206)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samsung Electro-Mechanics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL31B106KAHNNNE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C14860"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "25V"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found Linear reagulator SMD AMS1117 - duplicate
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Added Pin To Net: NetName=+14.8V Pin=C32-1
+Added Pin To Net: NetName=GND Pin=C32-2
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin D3-1
+Add Pin To Net: Unknown Pin: Pin D3-2
+Add Pin To Net: Unknown Pin: Pin U9-1
+Add Pin To Net: Unknown Pin: Pin U9-2
+Add Pin To Net: Unknown Pin: Pin U9-3
+Add Class Member: Failed to add class member : Component C2 47uF
+Add Class Member: Failed to add class member : Component C3 47uF
+Add Class Member: Failed to add class member : Component C9 47uF
+Add Class Member: Failed to add class member : Component C10 47uF
+Added Member To Class: ClassName=EaglesPU Member=Component C32
+Add Class Member: Failed to add class member : Component U9 AMS1117

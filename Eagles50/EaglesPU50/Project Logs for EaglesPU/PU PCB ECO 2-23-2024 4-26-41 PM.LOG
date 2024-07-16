@@ -1,0 +1,132 @@
+Change Component Footprint: Designator=C1 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C5 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C6 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C7 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C8 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C12 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C13 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C14 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C15 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C17 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C19 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C21 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C23 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C27 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C28 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C29 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C30 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C31 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C35 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C4 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C11 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C33 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C34 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=R3 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R4 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R7 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R8 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R9 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R10 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R11 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R12 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R13 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R14 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R15 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R16 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R17 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R18 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R19 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R20 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R21 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R22 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R23 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R24 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R25 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R26 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R27 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Added Component: Designator=C16(CAP Ceramic SMD 0603)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CC0603KRX7R0BB104"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C113803"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Added Component: Designator=C18(CAP Ceramic SMD 0603)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CC0603KRX7R0BB104"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C113803"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Added Component: Designator=C20(CAP Ceramic SMD 0603)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CC0603KRX7R0BB104"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C113803"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Added Component: Designator=C22(CAP Ceramic SMD 0603)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CC0603KRX7R0BB104"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C113803"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Added Component: Designator=C24(CAP Ceramic SMD 0603)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CC0603KRX7R0BB104"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C113803"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristics Code"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found CAP Ceramic SMD 1206
+Add Component: Footprint Not Found Linear reagulator SMD AMS1117 - duplicate
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Added Pin To Net: NetName=+6V_1 Pin=C16-1
+Added Pin To Net: NetName=GND Pin=C16-2
+Added Pin To Net: NetName=+6V_2 Pin=C18-1
+Added Pin To Net: NetName=GND Pin=C18-2
+Added Pin To Net: NetName=+6V_3 Pin=C20-1
+Added Pin To Net: NetName=GND Pin=C20-2
+Added Pin To Net: NetName=+6V_4 Pin=C22-1
+Added Pin To Net: NetName=GND Pin=C22-2
+Added Pin To Net: NetName=+6V_5 Pin=C24-1
+Added Pin To Net: NetName=GND Pin=C24-2
+Add Pin To Net: Unknown Pin: Pin C32-1
+Add Pin To Net: Unknown Pin: Pin C32-2
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin D3-1
+Add Pin To Net: Unknown Pin: Pin D3-2
+Add Pin To Net: Unknown Pin: Pin U9-1
+Add Pin To Net: Unknown Pin: Pin U9-2
+Add Pin To Net: Unknown Pin: Pin U9-3
+Add Class Member: Failed to add class member : Component C2 47uF
+Add Class Member: Failed to add class member : Component C3 47uF
+Add Class Member: Failed to add class member : Component C9 47uF
+Add Class Member: Failed to add class member : Component C10 47uF
+Added Member To Class: ClassName=EaglesPU Member=Component C16
+Added Member To Class: ClassName=EaglesPU Member=Component C18
+Added Member To Class: ClassName=EaglesPU Member=Component C20
+Added Member To Class: ClassName=EaglesPU Member=Component C22
+Added Member To Class: ClassName=EaglesPU Member=Component C24
+Add Class Member: Failed to add class member : Component C32 10uF
+Add Class Member: Failed to add class member : Component U9 AMS1117

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=J10-1
+Removed Pin From Net: NetName=+14.8V Pin=J10-2
+Change Component Footprint: Designator=J10 Old Footprint=XT60PW-M New Footprint=DC-002
+Change Component Comment : Designator=J10 Old Comment=Input 12V New Comment=DC_Socket
+Change component parameters: Designator = "J10" ("J10"); Footprint = "XT60PW-M"; UniqueID = "\OVQPEXFQ" ("\OVQPEXFQ")
+Added Pin To Net: NetName=+14.8V Pin=J10-1
+Added Pin To Net: NetName=GND Pin=J10-2
+Added Pin To Net: NetName=GND Pin=J10-3

@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=J9 Old Footprint=AMASS_XT30PW-F New Footprint=XT60PW-M
+Change Component Comment : Designator=J9 Old Comment=XT30PW-M New Comment=Input 50V
+Change component parameters: Designator = "J9" ("J9"); Footprint = "AMASS_XT30PW-F"; UniqueID = "\MYFXCYQZ" ("\MYFXCYQZ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Changzhou Amass Elec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ManufacturerPartNumber"; Value = "XT60PW-M"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SupplierPartNumber"; Value = "C98732"; VariantName = "[No Variations]"
+Added Room: Name=EaglesPU50

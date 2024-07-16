@@ -1,0 +1,22 @@
+Change Component Footprint: Designator=C2 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C3 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C9 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Change Component Footprint: Designator=C10 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP Ceramic SMD 1206
+Add Component: Footprint Not Found Linear reagulator SMD AMS1117 - duplicate
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin D3-1
+Add Pin To Net: Unknown Pin: Pin D3-2
+Added Pin To Net: NetName=+14.8V Pin=R21-2
+Added Pin To Net: NetName=+14.8V Pin=R22-2
+Added Pin To Net: NetName=+14.8V Pin=R23-2
+Added Pin To Net: NetName=+14.8V Pin=R24-2
+Added Pin To Net: NetName=+14.8V Pin=R25-2
+Added Pin To Net: NetName=+14.8V Pin=R26-2
+Added Pin To Net: NetName=+14.8V Pin=R27-2
+Add Pin To Net: Unknown Pin: Pin U9-1
+Add Pin To Net: Unknown Pin: Pin U9-2
+Add Pin To Net: Unknown Pin: Pin U9-3
+Add Class Member: Failed to add class member : Component U9 AMS1117

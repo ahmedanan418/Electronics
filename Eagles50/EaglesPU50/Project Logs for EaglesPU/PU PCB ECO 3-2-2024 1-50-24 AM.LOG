@@ -1,0 +1,16 @@
+Removed Member From Class: ClassName=EaglesPU Member=FID1
+Removed Member From Class: ClassName=EaglesPU Member=FID2
+Removed Member From Class: ClassName=EaglesPU Member=FID3
+Removed Member From Class: ClassName=EaglesPU Member=FID4
+Added Component: Designator=MH5(Connector Mounting hole TH 2mm)
+Added Component: Designator=MH6(Connector Mounting hole TH 2mm)
+Added Component: Designator=MH7(Connector Mounting hole TH 2mm)
+Added Component: Designator=MH8(Connector Mounting hole TH 2mm)
+Added Pin To Net: NetName=+12 Pin=MH5-1
+Added Pin To Net: NetName=+12 Pin=MH6-1
+Added Pin To Net: NetName=GND Pin=MH7-1
+Added Pin To Net: NetName=GND Pin=MH8-1
+Added Member To Class: ClassName=EaglesPU Member=Component MH5 Mounting Hole
+Added Member To Class: ClassName=EaglesPU Member=Component MH6 Mounting Hole
+Added Member To Class: ClassName=EaglesPU Member=Component MH7 Mounting Hole
+Added Member To Class: ClassName=EaglesPU Member=Component MH8 Mounting Hole

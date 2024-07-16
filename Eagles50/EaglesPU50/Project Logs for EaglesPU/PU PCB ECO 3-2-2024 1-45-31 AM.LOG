@@ -1,0 +1,40 @@
+Removed Pin From Net: NetName=+12 Pin=MH5-1
+Removed Pin From Net: NetName=+12 Pin=MH6-1
+Removed Pin From Net: NetName=GND Pin=MH7-1
+Removed Pin From Net: NetName=GND Pin=MH8-1
+Removed Member From Class: ClassName=EaglesPU Member=MH5
+Removed Member From Class: ClassName=EaglesPU Member=MH6
+Removed Member From Class: ClassName=EaglesPU Member=MH7
+Removed Member From Class: ClassName=EaglesPU Member=MH8
+Added Component: Designator=FID1(Fiducial10-20)
+Add component (AddParameter): Name = "ClassName"; Value = "FiducialMark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompType"; Value = "Fiducial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MountType"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "N/A"; VariantName = "[No Variations]"
+Added Component: Designator=FID2(Fiducial10-20)
+Add component (AddParameter): Name = "ClassName"; Value = "FiducialMark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompType"; Value = "Fiducial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MountType"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "N/A"; VariantName = "[No Variations]"
+Added Component: Designator=FID3(Fiducial10-20)
+Add component (AddParameter): Name = "ClassName"; Value = "FiducialMark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompType"; Value = "Fiducial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MountType"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "N/A"; VariantName = "[No Variations]"
+Added Component: Designator=FID4(Fiducial10-20)
+Add component (AddParameter): Name = "ClassName"; Value = "FiducialMark"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompType"; Value = "Fiducial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MountType"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "N/A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "N/A"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=EaglesPU Member=Component FID1 Fiducial
+Added Member To Class: ClassName=EaglesPU Member=Component FID2 Fiducial
+Added Member To Class: ClassName=EaglesPU Member=Component FID3 Fiducial
+Added Member To Class: ClassName=EaglesPU Member=Component FID4 Fiducial

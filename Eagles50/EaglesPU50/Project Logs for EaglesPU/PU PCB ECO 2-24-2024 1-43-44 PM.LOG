@@ -1,0 +1,11 @@
+Added Component: Designator=U9(Linear reagulator SMD AMS1117 - duplicate)
+Add component (AddParameter): Name = "Current max"; Value = "10mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://forum.digikey.com/t/cross-reference-for-ams1117-3-3/4397"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Advanced Monolithic Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "0°C ~ 125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage max"; Value = "15V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage output"; Value = "3.3V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U9-1
+Added Pin To Net: NetName=+3V3 Pin=U9-2
+Added Pin To Net: NetName=NetC27_1 Pin=U9-3
+Added Member To Class: ClassName=EaglesPU Member=Component U9 AMS1117
