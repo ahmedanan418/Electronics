@@ -1,0 +1,24 @@
+Added Component: Designator=U8(ULN2803A)
+Add component (AddParameter): Name = "Manufacturer"; Value = "UMW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ULN2803A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C845537"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=DCV1_SIG Pin=U8-1
+Added Pin To Net: NetName=DCV2_SIG Pin=U8-2
+Added Pin To Net: NetName=DCV3_SIG Pin=U8-3
+Added Pin To Net: NetName=DCV4_SIG Pin=U8-4
+Added Pin To Net: NetName=DCV5_SIG Pin=U8-5
+Added Pin To Net: NetName=DCV6_SIG Pin=U8-6
+Added Pin To Net: NetName=DCV7_SIG Pin=U8-7
+Added Pin To Net: NetName=DCV8_SIG Pin=U8-8
+Added Pin To Net: NetName=GND Pin=U8-9
+Added Pin To Net: NetName=+12V Pin=U8-10
+Added Pin To Net: NetName=DCV8 Pin=U8-11
+Added Pin To Net: NetName=DCV7 Pin=U8-12
+Added Pin To Net: NetName=DCV6 Pin=U8-13
+Added Pin To Net: NetName=DCV5 Pin=U8-14
+Added Pin To Net: NetName=DCV4 Pin=U8-15
+Added Pin To Net: NetName=DCV3 Pin=U8-16
+Added Pin To Net: NetName=DCV2 Pin=U8-17
+Added Pin To Net: NetName=DCV1 Pin=U8-18
+Added Member To Class: ClassName=Sheet1 Member=Component U8 ULN2803A

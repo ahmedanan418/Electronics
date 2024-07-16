@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=+12VB Pin=C17-1
+Removed Pin From Net: NetName=GND Pin=C17-2
+Removed Member From Class: ClassName=Designator Member=C17
+Change Component Footprint: Designator=R17 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R18 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R19 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R20 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Added Member To Class: ClassName=Sheet1 Member=Component D11
+Added Member To Class: ClassName=Sheet1 Member=Component D12
+Added Member To Class: ClassName=Sheet1 Member=Component D13
+Added Member To Class: ClassName=Sheet1 Member=Component D14
+Added Member To Class: ClassName=Sheet1 Member=Component R17 1kR
+Added Member To Class: ClassName=Sheet1 Member=Component R18 1kR
+Added Member To Class: ClassName=Sheet1 Member=Component R19 1kR
+Added Member To Class: ClassName=Sheet1 Member=Component R20 1kR

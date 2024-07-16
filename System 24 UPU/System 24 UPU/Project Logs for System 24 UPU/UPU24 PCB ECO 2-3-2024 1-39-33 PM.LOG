@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=GND Pin=D11-2
+Removed Pin From Net: NetName=GND Pin=D12-2
+Removed Pin From Net: NetName=GND Pin=D13-2
+Removed Pin From Net: NetName=GND Pin=D14-2
+Removed Pin From Net: NetName=MotorA_SIG1 Pin=R17-2
+Removed Pin From Net: NetName=MotorA_SIG2 Pin=R18-2
+Removed Pin From Net: NetName=MotorB_SIG1 Pin=R19-2
+Removed Pin From Net: NetName=MotorB_SIG2 Pin=R20-2
+Removed Member From Class: ClassName=Sheet1 Member=D11
+Removed Member From Class: ClassName=Sheet1 Member=D12
+Removed Member From Class: ClassName=Sheet1 Member=D13
+Removed Member From Class: ClassName=Sheet1 Member=D14
+Removed Member From Class: ClassName=Sheet1 Member=R17
+Removed Member From Class: ClassName=Sheet1 Member=R18
+Removed Member From Class: ClassName=Sheet1 Member=R19
+Removed Member From Class: ClassName=Sheet1 Member=R20

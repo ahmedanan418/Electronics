@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=C23 Old Footprint=CAP Ceramic SMD 1206 New Footprint=CAP_EEEHA2A100P
+Change Component Comment : Designator=C23 Old Comment=10uF New Comment=
+Change Component Comment : Designator=J2 Old Comment=Input 12V New Comment=Input 48V
+Change component parameters: Designator = "C23" ("C23"); Footprint = "CAP Ceramic SMD 1206"; UniqueID = "\IJTQBKNO\TRSLHKFU" ("\IJTQBKNO\TRSLHKFU")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "EEEHA2A100P"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number"; Value = "C336526"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage"; Value = "100V"; VariantName = "[No Variations]"

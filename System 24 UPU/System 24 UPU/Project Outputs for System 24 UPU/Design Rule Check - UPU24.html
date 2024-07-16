@@ -1,0 +1,812 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://F:\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/17/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7:11:56 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc" class="file"><acronym title="F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc">F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">156</td></tr>
+</table>
+</td>
+</table><a name="IDCOIVEFEW51TSDH5S3VGNCNWK2DACK0PREFLTPCIBSNFCOTXBMDW"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN45WJREWXD5E4BYPZJDCKOS2BF1U1KUGZTLQHLNJYNAOKRU2RUH">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKZU3XKH0M3IQD5Q3OKWRLWBNFBPP2VEIOBUML0D3NT4AMFGS4YCE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXAADR25IMZLPK1TRV4JWAEXZ5J1VCL314COSTDDGHNHJVRDHCWZK">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5N1I3SSDY1WUEYH1DYIHFMQVBMUSLF50C5B1XULILYOAMMBGBKON">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOILXK1SUNRLUMR4UUZANOE4D3PIPAL0CTXM0E4JSYHQVZSOPGD2N">Width Constraint (Min=0.09mm) (Max=6mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHKK15LTLA0YFET34LVXNVB2JCBIMLPSCPYTQLT2EIYY1S21BYCM">Power Plane Connect Rule(Relief Connect )(Expansion=0.4mm) (Conductor Width=0.254mm) (Air Gap=0.2mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDX35H4GAZH2HQMNTBJTQOP1S4KE3FOSFBMOZEIDC0MW3AAEEZCZMP">Minimum Annular Ring (Minimum=0.13mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVD2MCGX2BMN1OJXNQMMCCBXNICTVMDPUPEK5EKB13VI1UXCK5YT">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRQVKZEULUHJ1ND5AVEZPBTAW4JUAH3VKHWLRHJL2RBJEUZYNB0NC">Hole To Hole Clearance (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBCDPQDBVXNDWNSFQJ3WGF3F5PMYXQXBTDULBSLMQ0GD4HQSDVXXF">Hole To Hole Clearance (Gap=0.254mm) (isVia),(IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOICS1M2XEOHCKBICX0AONUUWMGIFJ34N0150WTPGMU30MBWKOTMB">Minimum Solder Mask Sliver (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">43</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4HXUF4TKNGGQAW4HJWW5OIOILWESHBZLBV1HQMAL04THOSKQGOP">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIQDWZD21M4BNINWJ2AD5224X4M3SL4ZAXTS01IKR5W04COLDCXIM">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5DETDICBUN4IOASR0RHIC22ZNN2ZPZBKTJIVRTVSXDKK2JCEKI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOVWXLJZS3OEAHTW520SXTU4ZJFR01UYP1HBI0SIGMQ5EE5ECGJMK">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">113</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOL4MMEOFOHGOCJC4NBAUECK2CETYFJCX3ASEUBJKNQWVU3J3H1P">Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">156</td>
+</tr>
+</table><br><a name="IDOICS1M2XEOHCKBICX0AONUUWMGIFJ34N0150WTPGMU30MBWKOTMB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.2mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6143.548mil|Location2.X=6152.672mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6143.548mil|Location2.X=6152.672mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-1(0.2mm,22.4mm) on Top Layer And Pad U2-11(-1.4mm,20.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6143.548mil|Location2.X=6152.672mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6143.548mil|Location2.X=6152.672mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-10(0.2mm,18.4mm) on Top Layer And Pad U2-11(-1.4mm,20.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6123.863mil|Location2.X=6132.987mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6123.863mil|Location2.X=6132.987mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-2(-0.6mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6092.367mil|Location2.X=6101.491mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6092.367mil|Location2.X=6101.491mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-3(-1.4mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6060.871mil|Location2.X=6069.995mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6060.871mil|Location2.X=6069.995mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-4(-2.2mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6029.375mil|Location2.X=6038.499mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6029.375mil|Location2.X=6038.499mil|Location1.Y=5994.178mil|Location2.Y=6003.302mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-5(-3mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6029.375mil|Location2.X=6038.499mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6029.375mil|Location2.X=6038.499mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-6(-3mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6041.107mil|Location2.X=6050.231mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6041.107mil|Location2.X=6050.231mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-7(-2.2mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6072.603mil|Location2.X=6081.727mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6072.603mil|Location2.X=6081.727mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-8(-1.4mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.099mil|Location2.X=6113.223mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.099mil|Location2.X=6113.223mil|Location1.Y=5883.942mil|Location2.Y=5893.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.098mm &lt; 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-9(-0.6mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.186mil|Location2.X=5485.31mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.186mil|Location2.X=5485.31mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-1(-16.475mm,-28.395mm) on Bottom Layer And Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5481.565mil|Location2.X=5490.689mil|Location1.Y=3982.153mil|Location2.Y=3991.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5481.565mil|Location2.X=5490.689mil|Location1.Y=3982.153mil|Location2.Y=3991.277mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.158mm &lt; 0.2mm) Between Pad U6-1(-16.475mm,-28.395mm) on Bottom Layer And Via (-16.775mm,-29.875mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.158mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5348.234mil|Location2.X=5357.358mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5348.234mil|Location2.X=5357.358mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-10(-20.375mm,-22.655mm) on Bottom Layer And Pad U6-11(-19.725mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.643mil|Location2.X=5331.767mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.643mil|Location2.X=5331.767mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-10(-20.375mm,-22.655mm) on Bottom Layer And Pad U6-9(-21.025mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5373.824mil|Location2.X=5382.948mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5373.824mil|Location2.X=5382.948mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-11(-19.725mm,-22.655mm) on Bottom Layer And Pad U6-12(-19.075mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5399.415mil|Location2.X=5408.539mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5399.415mil|Location2.X=5408.539mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-12(-19.075mm,-22.655mm) on Bottom Layer And Pad U6-13(-18.425mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5425.005mil|Location2.X=5434.129mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5425.005mil|Location2.X=5434.129mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-13(-18.425mm,-22.655mm) on Bottom Layer And Pad U6-14(-17.775mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5450.596mil|Location2.X=5459.72mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5450.596mil|Location2.X=5459.72mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-14(-17.775mm,-22.655mm) on Bottom Layer And Pad U6-15(-17.125mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.186mil|Location2.X=5485.31mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.186mil|Location2.X=5485.31mil|Location1.Y=4272.869mil|Location2.Y=4281.993mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-15(-17.125mm,-22.655mm) on Bottom Layer And Pad U6-16(-16.475mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5450.596mil|Location2.X=5459.72mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5450.596mil|Location2.X=5459.72mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer And Pad U6-3(-17.775mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5471.303mil|Location2.X=5480.427mil|Location1.Y=3982.041mil|Location2.Y=3991.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5471.303mil|Location2.X=5480.427mil|Location1.Y=3982.041mil|Location2.Y=3991.165mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.169mm &lt; 0.2mm) Between Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer And Via (-16.775mm,-29.875mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.169mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5425.005mil|Location2.X=5434.129mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5425.005mil|Location2.X=5434.129mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-3(-17.775mm,-28.395mm) on Bottom Layer And Pad U6-4(-18.425mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5399.415mil|Location2.X=5408.539mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5399.415mil|Location2.X=5408.539mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-4(-18.425mm,-28.395mm) on Bottom Layer And Pad U6-5(-19.075mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5373.824mil|Location2.X=5382.948mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5373.824mil|Location2.X=5382.948mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-5(-19.075mm,-28.395mm) on Bottom Layer And Pad U6-6(-19.725mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5348.234mil|Location2.X=5357.358mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5348.234mil|Location2.X=5357.358mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-6(-19.725mm,-28.395mm) on Bottom Layer And Pad U6-7(-20.375mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.643mil|Location2.X=5331.767mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.643mil|Location2.X=5331.767mil|Location1.Y=3989.109mil|Location2.Y=3998.233mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U6-7(-20.375mm,-28.395mm) on Bottom Layer And Pad U6-8(-21.025mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5748.115mil|Location2.Y=5757.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5748.115mil|Location2.Y=5757.239mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-1(-25.12mm,15.225mm) on Bottom Layer And Pad U9-2(-25.12mm,15.875mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5876.068mil|Location2.Y=5885.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5876.068mil|Location2.Y=5885.192mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-10(-19.38mm,19.125mm) on Bottom Layer And Pad U9-11(-19.38mm,18.475mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5901.658mil|Location2.Y=5910.783mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5901.658mil|Location2.Y=5910.783mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-10(-19.38mm,19.125mm) on Bottom Layer And Pad U9-9(-19.38mm,19.775mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5850.477mil|Location2.Y=5859.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5850.477mil|Location2.Y=5859.601mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-11(-19.38mm,18.475mm) on Bottom Layer And Pad U9-12(-19.38mm,17.825mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5824.887mil|Location2.Y=5834.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5824.887mil|Location2.Y=5834.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-12(-19.38mm,17.825mm) on Bottom Layer And Pad U9-13(-19.38mm,17.175mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5799.296mil|Location2.Y=5808.42mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5799.296mil|Location2.Y=5808.42mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-13(-19.38mm,17.175mm) on Bottom Layer And Pad U9-14(-19.38mm,16.525mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5773.706mil|Location2.Y=5782.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5773.706mil|Location2.Y=5782.83mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-14(-19.38mm,16.525mm) on Bottom Layer And Pad U9-15(-19.38mm,15.875mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5748.115mil|Location2.Y=5757.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5403.499mil|Location2.X=5412.623mil|Location1.Y=5748.115mil|Location2.Y=5757.239mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-15(-19.38mm,15.875mm) on Bottom Layer And Pad U9-16(-19.38mm,15.225mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5773.706mil|Location2.Y=5782.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5773.706mil|Location2.Y=5782.83mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-2(-25.12mm,15.875mm) on Bottom Layer And Pad U9-3(-25.12mm,16.525mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5799.296mil|Location2.Y=5808.42mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5799.296mil|Location2.Y=5808.42mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-3(-25.12mm,16.525mm) on Bottom Layer And Pad U9-4(-25.12mm,17.175mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5824.887mil|Location2.Y=5834.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5824.887mil|Location2.Y=5834.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-4(-25.12mm,17.175mm) on Bottom Layer And Pad U9-5(-25.12mm,17.825mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5850.477mil|Location2.Y=5859.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5850.477mil|Location2.Y=5859.601mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-5(-25.12mm,17.825mm) on Bottom Layer And Pad U9-6(-25.12mm,18.475mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5876.068mil|Location2.Y=5885.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5876.068mil|Location2.Y=5885.192mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-6(-25.12mm,18.475mm) on Bottom Layer And Pad U9-7(-25.12mm,19.125mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5901.658mil|Location2.Y=5910.783mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5119.739mil|Location2.X=5128.863mil|Location1.Y=5901.658mil|Location2.Y=5910.783mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.14mm &lt; 0.2mm) Between Pad U9-7(-25.12mm,19.125mm) on Bottom Layer And Pad U9-8(-25.12mm,19.775mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5596.54mil|Location2.Y=5605.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5596.54mil|Location2.Y=5605.664mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.2mm) Between Via (31mm,11.1mm) from Top Layer to Bottom Layer And Via (31mm,12.3mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5698.903mil|Location2.Y=5708.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5698.903mil|Location2.Y=5708.027mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.2mm) Between Via (31mm,13.7mm) from Top Layer to Bottom Layer And Via (31mm,14.9mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5848.509mil|Location2.Y=5857.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7358.076mil|Location2.X=7367.2mil|Location1.Y=5848.509mil|Location2.Y=5857.633mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.2mm) Between Via (31mm,17.5mm) from Top Layer to Bottom Layer And Via (31mm,18.7mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDOVWXLJZS3OEAHTW520SXTU4ZJFR01UYP1HBI0SIGMQ5EE5ECGJMK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8178.411mil|Location2.X=8184.66mil|Location1.Y=3997.978mil|Location2.Y=4004.227mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8178.411mil|Location2.X=8184.66mil|Location1.Y=3997.978mil|Location2.Y=4004.227mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Text "" (51.8mm,-28.94mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6796.423mil|Location2.X=6802.672mil|Location1.Y=3057.545mil|Location2.Y=3063.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6796.423mil|Location2.X=6802.672mil|Location1.Y=3057.545mil|Location2.Y=3063.794mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (16.355mm,-52.827mm)(17.04mm,-52.827mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6782.939mil|Location2.X=6789.188mil|Location1.Y=3051.836mil|Location2.Y=3058.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6782.939mil|Location2.X=6789.188mil|Location1.Y=3051.836mil|Location2.Y=3058.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (16.355mm,-53.117mm)(16.355mm,-52.827mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7070.186mil|Location2.X=7076.435mil|Location1.Y=3046.127mil|Location2.Y=3052.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7070.186mil|Location2.X=7076.435mil|Location1.Y=3046.127mil|Location2.Y=3052.377mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (16.355mm,-53.117mm)(30.947mm,-53.117mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5489.127mil|Location2.X=5495.376mil|Location1.Y=3052.033mil|Location2.Y=3058.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5489.127mil|Location2.X=5495.376mil|Location1.Y=3052.033mil|Location2.Y=3058.282mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-16.508mm,-53.112mm)(-16.508mm,-52.822mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6809.907mil|Location2.X=6816.156mil|Location1.Y=3108.101mil|Location2.Y=3114.35mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6809.907mil|Location2.X=6816.156mil|Location1.Y=3108.101mil|Location2.Y=3114.35mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (17.04mm,-53.117mm)(17.04mm,-44.67mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5473.828mil|Location2.X=5480.077mil|Location1.Y=3057.742mil|Location2.Y=3063.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5473.828mil|Location2.X=5480.077mil|Location1.Y=3057.742mil|Location2.Y=3063.991mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-17.285mm,-52.822mm)(-16.508mm,-52.822mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5458.529mil|Location2.X=5464.778mil|Location1.Y=3107.57mil|Location2.Y=3113.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5458.529mil|Location2.X=5464.778mil|Location1.Y=3107.57mil|Location2.Y=3113.819mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-17.285mm,-53.112mm)(-17.285mm,-44.714mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7342.135mil|Location2.X=7348.384mil|Location1.Y=3057.545mil|Location2.Y=3063.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7342.135mil|Location2.X=7348.384mil|Location1.Y=3057.545mil|Location2.Y=3063.794mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (30.17mm,-52.827mm)(30.947mm,-52.827mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7326.836mil|Location2.X=7333.085mil|Location1.Y=3108.101mil|Location2.Y=3114.35mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7326.836mil|Location2.X=7333.085mil|Location1.Y=3108.101mil|Location2.Y=3114.35mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (30.17mm,-53.117mm)(30.17mm,-44.719mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.6mil|Location2.X=4947.849mil|Location1.Y=3107.57mil|Location2.Y=3113.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4941.6mil|Location2.X=4947.849mil|Location1.Y=3107.57mil|Location2.Y=3113.819mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-30.415mm,-53.112mm)(-30.415mm,-44.665mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7357.434mil|Location2.X=7363.683mil|Location1.Y=3051.836mil|Location2.Y=3058.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7357.434mil|Location2.X=7363.683mil|Location1.Y=3051.836mil|Location2.Y=3058.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (30.947mm,-53.117mm)(30.947mm,-52.827mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4928.116mil|Location2.X=4934.365mil|Location1.Y=3057.742mil|Location2.Y=3063.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4928.116mil|Location2.X=4934.365mil|Location1.Y=3057.742mil|Location2.Y=3063.991mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-31.1mm,-52.822mm)(-30.415mm,-52.822mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5201.879mil|Location2.X=5208.128mil|Location1.Y=3046.324mil|Location2.Y=3052.573mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5201.879mil|Location2.X=5208.128mil|Location1.Y=3046.324mil|Location2.Y=3052.573mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-31.1mm,-53.112mm)(-16.508mm,-53.112mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4914.631mil|Location2.X=4920.881mil|Location1.Y=3052.033mil|Location2.Y=3058.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4914.631mil|Location2.X=4920.881mil|Location1.Y=3052.033mil|Location2.Y=3058.282mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-31.1mm,-53.112mm)(-31.1mm,-52.822mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.5mil|Location2.X=8188.75mil|Location1.Y=4406.797mil|Location2.Y=4413.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.5mil|Location2.X=8188.75mil|Location1.Y=4406.797mil|Location2.Y=4413.046mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (41.65mm,-18.556mm)(53.25mm,-18.556mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8231.713mil|Location2.X=8237.962mil|Location1.Y=4369.632mil|Location2.Y=4375.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8231.713mil|Location2.X=8237.962mil|Location1.Y=4369.632mil|Location2.Y=4375.881mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (41.65mm,-19.5mm)(55.75mm,-19.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.5mil|Location2.X=8188.75mil|Location1.Y=4667.112mil|Location2.Y=4673.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.5mil|Location2.X=8188.75mil|Location1.Y=4667.112mil|Location2.Y=4673.361mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (41.68mm,-11.944mm)(53.25mm,-11.944mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=5796.571mil|Location2.Y=5802.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=5796.571mil|Location2.Y=5802.82mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.059mm,16.744mm)(52.359mm,16.744mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6099.72mil|Location2.Y=6105.969mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6099.72mil|Location2.Y=6105.969mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.059mm,24.444mm)(52.359mm,24.444mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6245.074mil|Location2.Y=6251.324mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6245.074mil|Location2.Y=6251.324mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.059mm,28.136mm)(52.359mm,28.136mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6548.224mil|Location2.Y=6554.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8164.668mil|Location2.X=8170.918mil|Location1.Y=6548.224mil|Location2.Y=6554.473mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.059mm,35.836mm)(52.359mm,35.836mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=5737.516mil|Location2.Y=5743.765mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=5737.516mil|Location2.Y=5743.765mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.159mm,15.244mm)(57.359mm,15.244mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6162.712mil|Location2.Y=6168.962mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6162.712mil|Location2.Y=6168.962mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.159mm,26.044mm)(57.359mm,26.044mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6186.019mil|Location2.Y=6192.269mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6186.019mil|Location2.Y=6192.269mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.159mm,26.636mm)(57.359mm,26.636mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6611.216mil|Location2.Y=6617.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8263.094mil|Location2.X=8269.343mil|Location1.Y=6611.216mil|Location2.Y=6617.465mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.159mm,37.436mm)(57.359mm,37.436mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8168.605mil|Location2.X=8174.855mil|Location1.Y=5651.216mil|Location2.Y=5657.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8168.605mil|Location2.X=8174.855mil|Location1.Y=5651.216mil|Location2.Y=5657.465mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.259mm,13.052mm)(52.559mm,13.052mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8168.605mil|Location2.X=8174.855mil|Location1.Y=5348.067mil|Location2.Y=5354.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8168.605mil|Location2.X=8174.855mil|Location1.Y=5348.067mil|Location2.Y=5354.316mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.259mm,5.352mm)(52.559mm,5.352mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8267.031mil|Location2.X=8273.28mil|Location1.Y=5714.208mil|Location2.Y=5720.458mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8267.031mil|Location2.X=8273.28mil|Location1.Y=5714.208mil|Location2.Y=5720.458mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.359mm,14.652mm)(57.559mm,14.652mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8267.031mil|Location2.X=8273.28mil|Location1.Y=5289.011mil|Location2.Y=5295.261mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8267.031mil|Location2.X=8273.28mil|Location1.Y=5289.011mil|Location2.Y=5295.261mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.359mm,3.852mm)(57.559mm,3.852mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8174.511mil|Location2.X=8180.76mil|Location1.Y=5199.838mil|Location2.Y=5206.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8174.511mil|Location2.X=8180.76mil|Location1.Y=5199.838mil|Location2.Y=5206.087mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.559mm,1.587mm)(52.859mm,1.587mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8174.511mil|Location2.X=8180.76mil|Location1.Y=4896.689mil|Location2.Y=4902.938mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8174.511mil|Location2.X=8180.76mil|Location1.Y=4896.689mil|Location2.Y=4902.938mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.559mm,-6.113mm)(52.859mm,-6.113mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8272.936mil|Location2.X=8279.185mil|Location1.Y=5262.83mil|Location2.Y=5269.08mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8272.936mil|Location2.X=8279.185mil|Location1.Y=5262.83mil|Location2.Y=5269.08mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.659mm,3.187mm)(57.859mm,3.187mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8272.936mil|Location2.X=8279.185mil|Location1.Y=4837.634mil|Location2.Y=4843.883mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8272.936mil|Location2.X=8279.185mil|Location1.Y=4837.634mil|Location2.Y=4843.883mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (44.659mm,-7.613mm)(57.859mm,-7.613mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8223.681mil|Location2.X=8229.931mil|Location1.Y=3604.474mil|Location2.Y=3610.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8223.681mil|Location2.X=8229.931mil|Location1.Y=3604.474mil|Location2.Y=3610.723mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (46.895mm,-38.935mm)(55.342mm,-38.935mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8223.681mil|Location2.X=8229.931mil|Location1.Y=4121.403mil|Location2.Y=4127.652mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8223.681mil|Location2.X=8229.931mil|Location1.Y=4121.403mil|Location2.Y=4127.652mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (46.944mm,-25.805mm)(55.342mm,-25.805mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.511mil|Location2.X=8188.76mil|Location1.Y=4723.962mil|Location2.Y=4730.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8182.511mil|Location2.X=8188.76mil|Location1.Y=4723.962mil|Location2.Y=4730.211mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (47.15mm,-10.5mm)(53.25mm,-10.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8139.041mil|Location2.X=8145.29mil|Location1.Y=3862.939mil|Location2.Y=3869.188mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8139.041mil|Location2.X=8145.29mil|Location1.Y=3862.939mil|Location2.Y=3869.188mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (50.8mm,-38.935mm)(50.8mm,-25.805mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=4018.844mil|Location2.Y=4025.093mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=4018.844mil|Location2.Y=4025.093mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.65mm,-28.41mm)(-43.35mm,-28.41mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=6316.088mil|Location2.Y=6322.337mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=6316.088mil|Location2.Y=6322.337mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.65mm,29.94mm)(-43.35mm,29.94mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=3912.545mil|Location2.Y=3918.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=3912.545mil|Location2.Y=3918.794mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.65mm,-31.11mm)(-43.35mm,-31.11mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=6422.387mil|Location2.Y=6428.636mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4146.617mil|Location2.X=4152.866mil|Location1.Y=6422.387mil|Location2.Y=6428.636mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.65mm,32.64mm)(-43.35mm,32.64mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=4014.907mil|Location2.Y=4021.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=4014.907mil|Location2.Y=4021.156mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,-28.61mm)(-51.65mm,-28.41mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=6320.025mil|Location2.Y=6326.274mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=6320.025mil|Location2.Y=6326.274mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,30.14mm)(-51.65mm,29.94mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4097.702mil|Location2.X=4103.951mil|Location1.Y=6369.238mil|Location2.Y=6375.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4097.702mil|Location2.X=4103.951mil|Location1.Y=6369.238mil|Location2.Y=6375.487mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,30.14mm)(-51.85mm,32.44mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=3916.482mil|Location2.Y=3922.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=3916.482mil|Location2.Y=3922.731mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,-30.91mm)(-51.65mm,-31.11mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4097.702mil|Location2.X=4103.951mil|Location1.Y=3965.694mil|Location2.Y=3971.944mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4097.702mil|Location2.X=4103.951mil|Location1.Y=3965.694mil|Location2.Y=3971.944mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,-30.91mm)(-51.85mm,-28.61mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=6418.45mil|Location2.Y=6424.699mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4101.639mil|Location2.X=4107.888mil|Location1.Y=6418.45mil|Location2.Y=6424.699mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-51.85mm,32.44mm)(-51.65mm,32.64mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=5800.507mil|Location2.Y=5806.757mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=5800.507mil|Location2.Y=5806.757mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.359mm,16.744mm)(52.559mm,16.944mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6095.783mil|Location2.Y=6102.032mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6095.783mil|Location2.Y=6102.032mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.359mm,24.444mm)(52.559mm,24.244mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6249.011mil|Location2.Y=6255.261mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6249.011mil|Location2.Y=6255.261mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.359mm,28.136mm)(52.559mm,28.336mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6544.287mil|Location2.Y=6550.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8204.346mil|Location2.X=8210.595mil|Location1.Y=6544.287mil|Location2.Y=6550.536mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.359mm,35.836mm)(52.559mm,35.636mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8212.22mil|Location2.X=8218.469mil|Location1.Y=5647.279mil|Location2.Y=5653.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8212.22mil|Location2.X=8218.469mil|Location1.Y=5647.279mil|Location2.Y=5653.528mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,13.052mm)(52.759mm,12.852mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=5879.248mil|Location2.Y=5885.497mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=5879.248mil|Location2.Y=5885.497mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,16.944mm)(52.559mm,20.744mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6017.043mil|Location2.Y=6023.292mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6017.043mil|Location2.Y=6023.292mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,20.444mm)(52.559mm,24.244mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6327.752mil|Location2.Y=6334.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6327.752mil|Location2.Y=6334.001mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,28.336mm)(52.559mm,32.136mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6465.547mil|Location2.Y=6471.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8208.283mil|Location2.X=8214.532mil|Location1.Y=6465.547mil|Location2.Y=6471.796mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,31.836mm)(52.559mm,35.636mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8212.22mil|Location2.X=8218.469mil|Location1.Y=5352.003mil|Location2.Y=5358.253mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8212.22mil|Location2.X=8218.469mil|Location1.Y=5352.003mil|Location2.Y=5358.253mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.559mm,5.352mm)(52.759mm,5.552mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.586mil|Location2.X=4135.836mil|Location1.Y=5777.112mil|Location2.Y=5783.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.586mil|Location2.X=4135.836mil|Location1.Y=5777.112mil|Location2.Y=5783.361mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.5mm,16.25mm)(-46.4mm,16.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4072.112mil|Location2.X=4078.361mil|Location1.Y=5954.277mil|Location2.Y=5960.526mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4072.112mil|Location2.X=4078.361mil|Location1.Y=5954.277mil|Location2.Y=5960.526mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.5mm,16.25mm)(-52.5mm,25.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.597mil|Location2.X=4135.846mil|Location1.Y=5833.962mil|Location2.Y=5840.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.597mil|Location2.X=4135.846mil|Location1.Y=5833.962mil|Location2.Y=5840.211mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.5mm,17.694mm)(-40.93mm,17.694mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.597mil|Location2.X=4135.846mil|Location1.Y=6094.277mil|Location2.Y=6100.526mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4129.597mil|Location2.X=4135.846mil|Location1.Y=6094.277mil|Location2.Y=6100.526mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.5mm,24.306mm)(-40.9mm,24.306mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8216.157mil|Location2.X=8222.406mil|Location1.Y=5430.744mil|Location2.Y=5436.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8216.157mil|Location2.X=8222.406mil|Location1.Y=5430.744mil|Location2.Y=5436.993mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.759mm,5.552mm)(52.759mm,9.352mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8216.157mil|Location2.X=8222.406mil|Location1.Y=5568.539mil|Location2.Y=5574.788mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8216.157mil|Location2.X=8222.406mil|Location1.Y=5568.539mil|Location2.Y=5574.788mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.759mm,9.052mm)(52.759mm,12.852mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=4696.639mil|Location2.Y=4702.888mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=4696.639mil|Location2.Y=4702.888mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,-11.194mm)(-41.15mm,-11.194mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=5621.836mil|Location2.Y=5628.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=5621.836mil|Location2.Y=5628.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,12.306mm)(-41.15mm,12.306mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=4436.324mil|Location2.Y=4442.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=4436.324mil|Location2.Y=4442.574mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,-17.806mm)(-41.18mm,-17.806mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.665mil|Location2.X=4130.914mil|Location1.Y=4379.474mil|Location2.Y=4385.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.665mil|Location2.X=4130.914mil|Location1.Y=4379.474mil|Location2.Y=4385.723mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,-19.25mm)(-46.65mm,-19.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4062.269mil|Location2.X=4068.518mil|Location1.Y=4556.639mil|Location2.Y=4562.888mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4062.269mil|Location2.X=4068.518mil|Location1.Y=4556.639mil|Location2.Y=4562.888mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,-19.25mm)(-52.75mm,-10.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.665mil|Location2.X=4130.914mil|Location1.Y=5304.671mil|Location2.Y=5310.92mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.665mil|Location2.X=4130.914mil|Location1.Y=5304.671mil|Location2.Y=5310.92mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,4.25mm)(-46.65mm,4.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4062.269mil|Location2.X=4068.518mil|Location1.Y=5481.836mil|Location2.Y=5488.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4062.269mil|Location2.X=4068.518mil|Location1.Y=5481.836mil|Location2.Y=5488.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,4.25mm)(-52.75mm,13.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=5361.521mil|Location2.Y=5367.77mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.676mil|Location2.X=4130.925mil|Location1.Y=5361.521mil|Location2.Y=5367.77mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.75mm,5.694mm)(-41.18mm,5.694mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.66mil|Location2.X=4131.909mil|Location1.Y=5159.238mil|Location2.Y=5165.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.66mil|Location2.X=4131.909mil|Location1.Y=5159.238mil|Location2.Y=5165.487mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.7mm,0.556mm)(-41.1mm,0.556mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.66mil|Location2.X=4131.909mil|Location1.Y=4898.923mil|Location2.Y=4905.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.66mil|Location2.X=4131.909mil|Location1.Y=4898.923mil|Location2.Y=4905.172mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.7mm,-6.056mm)(-41.13mm,-6.056mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.649mil|Location2.X=4131.899mil|Location1.Y=4842.073mil|Location2.Y=4848.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4125.649mil|Location2.X=4131.899mil|Location1.Y=4842.073mil|Location2.Y=4848.322mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.7mm,-7.5mm)(-46.6mm,-7.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4064.238mil|Location2.X=4070.487mil|Location1.Y=5019.238mil|Location2.Y=5025.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4064.238mil|Location2.X=4070.487mil|Location1.Y=5019.238mil|Location2.Y=5025.487mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-52.7mm,-7.5mm)(-52.7mm,1.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8224.031mil|Location2.X=8230.28mil|Location1.Y=5195.901mil|Location2.Y=5202.15mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8224.031mil|Location2.X=8230.28mil|Location1.Y=5195.901mil|Location2.Y=5202.15mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.859mm,1.587mm)(53.059mm,1.387mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8224.031mil|Location2.X=8230.28mil|Location1.Y=4900.626mil|Location2.Y=4906.875mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8224.031mil|Location2.X=8230.28mil|Location1.Y=4900.626mil|Location2.Y=4906.875mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (52.859mm,-6.113mm)(53.059mm,-5.913mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8227.968mil|Location2.X=8234.217mil|Location1.Y=5117.161mil|Location2.Y=5123.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8227.968mil|Location2.X=8234.217mil|Location1.Y=5117.161mil|Location2.Y=5123.41mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (53.059mm,-2.413mm)(53.059mm,1.387mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8227.968mil|Location2.X=8234.217mil|Location1.Y=4979.366mil|Location2.Y=4985.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8227.968mil|Location2.X=8234.217mil|Location1.Y=4979.366mil|Location2.Y=4985.615mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (53.059mm,-5.913mm)(53.059mm,-2.113mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8284.71mil|Location2.X=8290.959mil|Location1.Y=4723.962mil|Location2.Y=4730.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8284.71mil|Location2.X=8290.959mil|Location1.Y=4723.962mil|Location2.Y=4730.211mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (53.25mm,-10.5mm)(55.75mm,-10.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8235.498mil|Location2.X=8241.747mil|Location1.Y=4546.797mil|Location2.Y=4553.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8235.498mil|Location2.X=8241.747mil|Location1.Y=4546.797mil|Location2.Y=4553.046mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (53.25mm,-19.5mm)(53.25mm,-10.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8312.151mil|Location2.X=8318.4mil|Location1.Y=4152.001mil|Location2.Y=4158.25mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8312.151mil|Location2.X=8318.4mil|Location1.Y=4152.001mil|Location2.Y=4158.25mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.052mm,-25.028mm)(55.342mm,-25.028mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8306.442mil|Location2.X=8312.692mil|Location1.Y=4136.702mil|Location2.Y=4142.951mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8306.442mil|Location2.X=8312.692mil|Location1.Y=4136.702mil|Location2.Y=4142.951mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.052mm,-25.805mm)(55.052mm,-25.028mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8306.442mil|Location2.X=8312.692mil|Location1.Y=3590.99mil|Location2.Y=3597.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8306.442mil|Location2.X=8312.692mil|Location1.Y=3590.99mil|Location2.Y=3597.239mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.052mm,-39.62mm)(55.052mm,-38.935mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8312.151mil|Location2.X=8318.4mil|Location1.Y=3577.505mil|Location2.Y=3583.755mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8312.151mil|Location2.X=8318.4mil|Location1.Y=3577.505mil|Location2.Y=3583.755mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.052mm,-39.62mm)(55.342mm,-39.62mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.463mil|Location2.X=4081.712mil|Location1.Y=4733.804mil|Location2.Y=4740.053mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.463mil|Location2.X=4081.712mil|Location1.Y=4733.804mil|Location2.Y=4740.053mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,-10.25mm)(-41.15mm,-10.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.463mil|Location2.X=4081.712mil|Location1.Y=5659.001mil|Location2.Y=5665.25mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.463mil|Location2.X=4081.712mil|Location1.Y=5659.001mil|Location2.Y=5665.25mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,13.25mm)(-41.15mm,13.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4013.056mil|Location2.X=4019.306mil|Location1.Y=4379.474mil|Location2.Y=4385.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4013.056mil|Location2.X=4019.306mil|Location1.Y=4379.474mil|Location2.Y=4385.723mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,-19.25mm)(-52.75mm,-19.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.844mil|Location2.X=3970.093mil|Location1.Y=4556.639mil|Location2.Y=4562.889mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.844mil|Location2.X=3970.093mil|Location1.Y=4556.639mil|Location2.Y=4562.889mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,-19.25mm)(-55.25mm,-10.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4013.056mil|Location2.X=4019.306mil|Location1.Y=5304.671mil|Location2.Y=5310.92mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4013.056mil|Location2.X=4019.306mil|Location1.Y=5304.671mil|Location2.Y=5310.92mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,4.25mm)(-52.75mm,4.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.844mil|Location2.X=3970.093mil|Location1.Y=5481.836mil|Location2.Y=5488.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.844mil|Location2.X=3970.093mil|Location1.Y=5481.836mil|Location2.Y=5488.086mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.25mm,4.25mm)(-55.25mm,13.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4076.447mil|Location2.X=4082.697mil|Location1.Y=5196.403mil|Location2.Y=5202.652mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4076.447mil|Location2.X=4082.697mil|Location1.Y=5196.403mil|Location2.Y=5202.652mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.2mm,1.5mm)(-41.1mm,1.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4015.025mil|Location2.X=4021.274mil|Location1.Y=4842.073mil|Location2.Y=4848.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4015.025mil|Location2.X=4021.274mil|Location1.Y=4842.073mil|Location2.Y=4848.322mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.2mm,-7.5mm)(-52.7mm,-7.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3965.812mil|Location2.X=3972.062mil|Location1.Y=5019.238mil|Location2.Y=5025.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3965.812mil|Location2.X=3972.062mil|Location1.Y=5019.238mil|Location2.Y=5025.487mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55.2mm,-7.5mm)(-55.2mm,1.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8317.86mil|Location2.X=8324.109mil|Location1.Y=3864.753mil|Location2.Y=3871.002mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8317.86mil|Location2.X=8324.109mil|Location1.Y=3864.753mil|Location2.Y=3871.002mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.342mm,-39.62mm)(55.342mm,-25.028mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8333.923mil|Location2.X=8340.172mil|Location1.Y=4546.797mil|Location2.Y=4553.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8333.923mil|Location2.X=8340.172mil|Location1.Y=4546.797mil|Location2.Y=4553.046mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (55.75mm,-19.5mm)(55.75mm,-10.5mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4022.899mil|Location2.X=4029.148mil|Location1.Y=5777.112mil|Location2.Y=5783.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4022.899mil|Location2.X=4029.148mil|Location1.Y=5777.112mil|Location2.Y=5783.361mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55mm,16.25mm)(-52.5mm,16.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3973.686mil|Location2.X=3979.936mil|Location1.Y=5954.277mil|Location2.Y=5960.526mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3973.686mil|Location2.X=3979.936mil|Location1.Y=5954.277mil|Location2.Y=5960.526mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55mm,16.25mm)(-55mm,25.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4080.384mil|Location2.X=4086.634mil|Location1.Y=6131.442mil|Location2.Y=6137.691mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4080.384mil|Location2.X=4086.634mil|Location1.Y=6131.442mil|Location2.Y=6137.691mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-55mm,25.25mm)(-40.9mm,25.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=4077.899mil|Location2.Y=4084.148mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=4077.899mil|Location2.Y=4084.148mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,-26.91mm)(-43.45mm,-26.91mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=6253.096mil|Location2.Y=6259.345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=6253.096mil|Location2.Y=6259.345mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,28.34mm)(-43.45mm,28.34mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3908.726mil|Location2.X=3914.975mil|Location1.Y=6367.269mil|Location2.Y=6373.518mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3908.726mil|Location2.X=3914.975mil|Location1.Y=6367.269mil|Location2.Y=6373.518mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,28.34mm)(-56.65mm,34.14mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=3849.553mil|Location2.Y=3855.802mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=3849.553mil|Location2.Y=3855.802mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,-32.71mm)(-43.45mm,-32.71mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3908.726mil|Location2.X=3914.975mil|Location1.Y=3963.726mil|Location2.Y=3969.975mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3908.726mil|Location2.X=3914.975mil|Location1.Y=3963.726mil|Location2.Y=3969.975mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,-32.71mm)(-56.65mm,-26.91mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=6481.442mil|Location2.Y=6487.692mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.192mil|Location2.X=4054.441mil|Location1.Y=6481.442mil|Location2.Y=6487.692mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-56.65mm,34.14mm)(-43.45mm,34.14mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8397.259mil|Location2.X=8403.508mil|Location1.Y=5950.114mil|Location2.Y=5956.363mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8397.259mil|Location2.X=8403.508mil|Location1.Y=5950.114mil|Location2.Y=5956.363mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (57.359mm,15.244mm)(57.359mm,26.044mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8397.259mil|Location2.X=8403.508mil|Location1.Y=6398.618mil|Location2.Y=6404.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8397.259mil|Location2.X=8403.508mil|Location1.Y=6398.618mil|Location2.Y=6404.867mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (57.359mm,26.636mm)(57.359mm,37.436mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8405.133mil|Location2.X=8411.382mil|Location1.Y=5501.61mil|Location2.Y=5507.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8405.133mil|Location2.X=8411.382mil|Location1.Y=5501.61mil|Location2.Y=5507.859mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (57.559mm,3.852mm)(57.559mm,14.652mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8416.944mil|Location2.X=8423.193mil|Location1.Y=5050.232mil|Location2.Y=5056.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8416.944mil|Location2.X=8423.193mil|Location1.Y=5050.232mil|Location2.Y=5056.481mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (57.859mm,-7.613mm)(57.859mm,3.187mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6444.159mil|Location2.X=6450.408mil|Location1.Y=7193.859mil|Location2.Y=7200.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6444.159mil|Location2.X=6450.408mil|Location1.Y=7193.859mil|Location2.Y=7200.108mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (7.75mm,36.134mm)(7.75mm,54.334mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5833.923mil|Location2.X=5840.172mil|Location1.Y=7193.859mil|Location2.Y=7200.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5833.923mil|Location2.X=5840.172mil|Location1.Y=7193.859mil|Location2.Y=7200.108mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-7.75mm,36.134mm)(-7.75mm,54.334mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6139.041mil|Location2.X=6145.29mil|Location1.Y=7276.482mil|Location2.Y=7282.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6139.041mil|Location2.X=6145.29mil|Location1.Y=7276.482mil|Location2.Y=7282.731mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (-7.75mm,54.334mm)(7.75mm,54.334mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=R33 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R34 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Net Name : Old Net Name=NetP2_8 New Net Name=DCV1_SIG
+Change Net Name : Old Net Name=NetP2_9 New Net Name=DCV3_SIG
+Change Net Name : Old Net Name=NetP2_10 New Net Name=DCV5_SIG
+Change Net Name : Old Net Name=NetP2_11 New Net Name=DCV6_SIG
+Change Net Name : Old Net Name=NetP2_30 New Net Name=DCV8_SIG
+Change Net Name : Old Net Name=NetP2_31 New Net Name=DCV7_SIG
+Change Net Name : Old Net Name=NetP2_32 New Net Name=DCV4_SIG
+Change Net Name : Old Net Name=NetP2_33 New Net Name=DCV2_SIG

@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=upu24-roundholes.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=upu24-slotholes.txt|DrillLayers=gtl,g1,g2,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=upu24-rectholes.txt|DrillLayers=gtl,g1,g2,gbl

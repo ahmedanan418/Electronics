@@ -1,0 +1,5 @@
+Change component parameters: Designator = "U8" ("U8"); Footprint = "ULN2803A"; UniqueID = "\HDYFJDMV\QENGUAGN" ("\HDYFJDMV\QENGUAGN")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "UMW"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "ULN2803A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number"; Value = "C845537"; VariantName = "[No Variations]"

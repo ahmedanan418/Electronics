@@ -1,0 +1,214 @@
+Protel Design System Design Rule Check
+PCB File : F:\AP24 edits\AP24 Hardware System\AP24_Hardware_System-\System 24 UPU\System 24 UPU\UPU24.PcbDoc
+Date     : 2/17/2024
+Time     : 7:11:56 PM
+
+Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.09mm) (Max=6mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.4mm) (Conductor Width=0.254mm) (Air Gap=0.2mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.5mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (isVia),(IsVia)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.2mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-1(0.2mm,22.4mm) on Top Layer And Pad U2-11(-1.4mm,20.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-10(0.2mm,18.4mm) on Top Layer And Pad U2-11(-1.4mm,20.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-2(-0.6mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-3(-1.4mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-4(-2.2mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-5(-3mm,22.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-6(-3mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-7(-2.2mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-8(-1.4mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.2mm) Between Pad U2-11(-1.4mm,20.4mm) on Top Layer And Pad U2-9(-0.6mm,18.4mm) on Top Layer [Top Solder] Mask Sliver [0.098mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-1(-16.475mm,-28.395mm) on Bottom Layer And Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.158mm < 0.2mm) Between Pad U6-1(-16.475mm,-28.395mm) on Bottom Layer And Via (-16.775mm,-29.875mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.158mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-10(-20.375mm,-22.655mm) on Bottom Layer And Pad U6-11(-19.725mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-10(-20.375mm,-22.655mm) on Bottom Layer And Pad U6-9(-21.025mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-11(-19.725mm,-22.655mm) on Bottom Layer And Pad U6-12(-19.075mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-12(-19.075mm,-22.655mm) on Bottom Layer And Pad U6-13(-18.425mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-13(-18.425mm,-22.655mm) on Bottom Layer And Pad U6-14(-17.775mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-14(-17.775mm,-22.655mm) on Bottom Layer And Pad U6-15(-17.125mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-15(-17.125mm,-22.655mm) on Bottom Layer And Pad U6-16(-16.475mm,-22.655mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer And Pad U6-3(-17.775mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.169mm < 0.2mm) Between Pad U6-2(-17.125mm,-28.395mm) on Bottom Layer And Via (-16.775mm,-29.875mm) from Top Layer to Bottom Layer [Bottom Solder] Mask Sliver [0.169mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-3(-17.775mm,-28.395mm) on Bottom Layer And Pad U6-4(-18.425mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-4(-18.425mm,-28.395mm) on Bottom Layer And Pad U6-5(-19.075mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-5(-19.075mm,-28.395mm) on Bottom Layer And Pad U6-6(-19.725mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-6(-19.725mm,-28.395mm) on Bottom Layer And Pad U6-7(-20.375mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U6-7(-20.375mm,-28.395mm) on Bottom Layer And Pad U6-8(-21.025mm,-28.395mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-1(-25.12mm,15.225mm) on Bottom Layer And Pad U9-2(-25.12mm,15.875mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-10(-19.38mm,19.125mm) on Bottom Layer And Pad U9-11(-19.38mm,18.475mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-10(-19.38mm,19.125mm) on Bottom Layer And Pad U9-9(-19.38mm,19.775mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-11(-19.38mm,18.475mm) on Bottom Layer And Pad U9-12(-19.38mm,17.825mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-12(-19.38mm,17.825mm) on Bottom Layer And Pad U9-13(-19.38mm,17.175mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-13(-19.38mm,17.175mm) on Bottom Layer And Pad U9-14(-19.38mm,16.525mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-14(-19.38mm,16.525mm) on Bottom Layer And Pad U9-15(-19.38mm,15.875mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-15(-19.38mm,15.875mm) on Bottom Layer And Pad U9-16(-19.38mm,15.225mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-2(-25.12mm,15.875mm) on Bottom Layer And Pad U9-3(-25.12mm,16.525mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-3(-25.12mm,16.525mm) on Bottom Layer And Pad U9-4(-25.12mm,17.175mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-4(-25.12mm,17.175mm) on Bottom Layer And Pad U9-5(-25.12mm,17.825mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-5(-25.12mm,17.825mm) on Bottom Layer And Pad U9-6(-25.12mm,18.475mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-6(-25.12mm,18.475mm) on Bottom Layer And Pad U9-7(-25.12mm,19.125mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.2mm) Between Pad U9-7(-25.12mm,19.125mm) on Bottom Layer And Pad U9-8(-25.12mm,19.775mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.197mm < 0.2mm) Between Via (31mm,11.1mm) from Top Layer to Bottom Layer And Via (31mm,12.3mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.197mm < 0.2mm) Between Via (31mm,13.7mm) from Top Layer to Bottom Layer And Via (31mm,14.9mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.197mm < 0.2mm) Between Via (31mm,17.5mm) from Top Layer to Bottom Layer And Via (31mm,18.7mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.197mm] / [Bottom Solder] Mask Sliver [0.197mm]
+Rule Violations :43
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "" (51.8mm,-28.94mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (16.355mm,-52.827mm)(17.04mm,-52.827mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (16.355mm,-53.117mm)(16.355mm,-52.827mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (16.355mm,-53.117mm)(30.947mm,-53.117mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-16.508mm,-53.112mm)(-16.508mm,-52.822mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (17.04mm,-53.117mm)(17.04mm,-44.67mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-17.285mm,-52.822mm)(-16.508mm,-52.822mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-17.285mm,-53.112mm)(-17.285mm,-44.714mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (30.17mm,-52.827mm)(30.947mm,-52.827mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (30.17mm,-53.117mm)(30.17mm,-44.719mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-30.415mm,-53.112mm)(-30.415mm,-44.665mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (30.947mm,-53.117mm)(30.947mm,-52.827mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-31.1mm,-52.822mm)(-30.415mm,-52.822mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-31.1mm,-53.112mm)(-16.508mm,-53.112mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-31.1mm,-53.112mm)(-31.1mm,-52.822mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (41.65mm,-18.556mm)(53.25mm,-18.556mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (41.65mm,-19.5mm)(55.75mm,-19.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (41.68mm,-11.944mm)(53.25mm,-11.944mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.059mm,16.744mm)(52.359mm,16.744mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.059mm,24.444mm)(52.359mm,24.444mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.059mm,28.136mm)(52.359mm,28.136mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.059mm,35.836mm)(52.359mm,35.836mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.159mm,15.244mm)(57.359mm,15.244mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.159mm,26.044mm)(57.359mm,26.044mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.159mm,26.636mm)(57.359mm,26.636mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.159mm,37.436mm)(57.359mm,37.436mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.259mm,13.052mm)(52.559mm,13.052mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.259mm,5.352mm)(52.559mm,5.352mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.359mm,14.652mm)(57.559mm,14.652mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.359mm,3.852mm)(57.559mm,3.852mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.559mm,1.587mm)(52.859mm,1.587mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.559mm,-6.113mm)(52.859mm,-6.113mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.659mm,3.187mm)(57.859mm,3.187mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (44.659mm,-7.613mm)(57.859mm,-7.613mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (46.895mm,-38.935mm)(55.342mm,-38.935mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (46.944mm,-25.805mm)(55.342mm,-25.805mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (47.15mm,-10.5mm)(53.25mm,-10.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (50.8mm,-38.935mm)(50.8mm,-25.805mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.65mm,-28.41mm)(-43.35mm,-28.41mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.65mm,29.94mm)(-43.35mm,29.94mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.65mm,-31.11mm)(-43.35mm,-31.11mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.65mm,32.64mm)(-43.35mm,32.64mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,-28.61mm)(-51.65mm,-28.41mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,30.14mm)(-51.65mm,29.94mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,30.14mm)(-51.85mm,32.44mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,-30.91mm)(-51.65mm,-31.11mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,-30.91mm)(-51.85mm,-28.61mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-51.85mm,32.44mm)(-51.65mm,32.64mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.359mm,16.744mm)(52.559mm,16.944mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.359mm,24.444mm)(52.559mm,24.244mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.359mm,28.136mm)(52.559mm,28.336mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.359mm,35.836mm)(52.559mm,35.636mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,13.052mm)(52.759mm,12.852mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,16.944mm)(52.559mm,20.744mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,20.444mm)(52.559mm,24.244mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,28.336mm)(52.559mm,32.136mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,31.836mm)(52.559mm,35.636mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.559mm,5.352mm)(52.759mm,5.552mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.5mm,16.25mm)(-46.4mm,16.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.5mm,16.25mm)(-52.5mm,25.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.5mm,17.694mm)(-40.93mm,17.694mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.5mm,24.306mm)(-40.9mm,24.306mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.759mm,5.552mm)(52.759mm,9.352mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.759mm,9.052mm)(52.759mm,12.852mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,-11.194mm)(-41.15mm,-11.194mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,12.306mm)(-41.15mm,12.306mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,-17.806mm)(-41.18mm,-17.806mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,-19.25mm)(-46.65mm,-19.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,-19.25mm)(-52.75mm,-10.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,4.25mm)(-46.65mm,4.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,4.25mm)(-52.75mm,13.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.75mm,5.694mm)(-41.18mm,5.694mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.7mm,0.556mm)(-41.1mm,0.556mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.7mm,-6.056mm)(-41.13mm,-6.056mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.7mm,-7.5mm)(-46.6mm,-7.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-52.7mm,-7.5mm)(-52.7mm,1.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.859mm,1.587mm)(53.059mm,1.387mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (52.859mm,-6.113mm)(53.059mm,-5.913mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (53.059mm,-2.413mm)(53.059mm,1.387mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (53.059mm,-5.913mm)(53.059mm,-2.113mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (53.25mm,-10.5mm)(55.75mm,-10.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (53.25mm,-19.5mm)(53.25mm,-10.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.052mm,-25.028mm)(55.342mm,-25.028mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.052mm,-25.805mm)(55.052mm,-25.028mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.052mm,-39.62mm)(55.052mm,-38.935mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.052mm,-39.62mm)(55.342mm,-39.62mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,-10.25mm)(-41.15mm,-10.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,13.25mm)(-41.15mm,13.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,-19.25mm)(-52.75mm,-19.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,-19.25mm)(-55.25mm,-10.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,4.25mm)(-52.75mm,4.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.25mm,4.25mm)(-55.25mm,13.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.2mm,1.5mm)(-41.1mm,1.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.2mm,-7.5mm)(-52.7mm,-7.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55.2mm,-7.5mm)(-55.2mm,1.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.342mm,-39.62mm)(55.342mm,-25.028mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (55.75mm,-19.5mm)(55.75mm,-10.5mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55mm,16.25mm)(-52.5mm,16.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55mm,16.25mm)(-55mm,25.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-55mm,25.25mm)(-40.9mm,25.25mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,-26.91mm)(-43.45mm,-26.91mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,28.34mm)(-43.45mm,28.34mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,28.34mm)(-56.65mm,34.14mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,-32.71mm)(-43.45mm,-32.71mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,-32.71mm)(-56.65mm,-26.91mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-56.65mm,34.14mm)(-43.45mm,34.14mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (57.359mm,15.244mm)(57.359mm,26.044mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (57.359mm,26.636mm)(57.359mm,37.436mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (57.559mm,3.852mm)(57.559mm,14.652mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (57.859mm,-7.613mm)(57.859mm,3.187mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (7.75mm,36.134mm)(7.75mm,54.334mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-7.75mm,36.134mm)(-7.75mm,54.334mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-7.75mm,54.334mm)(7.75mm,54.334mm) on Top Overlay 
+Rule Violations :113
+
+Processing Rule : Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 156
+Waived Violations : 0
+PCB Health Issues : 0
+Time Elapsed        : 00:00:02

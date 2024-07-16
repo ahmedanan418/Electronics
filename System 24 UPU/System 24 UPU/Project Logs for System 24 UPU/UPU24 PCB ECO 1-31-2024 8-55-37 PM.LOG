@@ -1,0 +1,11 @@
+Change Component Footprint: Designator=C48 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C49 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C51 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C52 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C53 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C54 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=R31 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Component Footprint: Designator=R32 Old Footprint=RES SMD 0603 New Footprint=RES SMD 0603
+Change Class Name : Old Net Name=Designator New Net Name=Sheet2
+Added Class: Name=Designator
+Added Class: Name=Sheet1
