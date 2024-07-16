@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=+14.8V Pin=J10-1
+Removed Pin From Net: NetName=GND Pin=J10-2
+Removed Member From Class: ClassName=EaglesPU Member=J10
+Change Component Footprint: Designator=C54 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C55 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C56 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Change Component Footprint: Designator=C57 Old Footprint=CAP Ceramic SMD 0603 New Footprint=CAP Ceramic SMD 0603
+Added Component: Designator=J8(AMASS_XT30PW-F)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Changzhou Amass Elec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "XT30PW-M"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "C2913282"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+14.8V Pin=J8-1
+Added Pin To Net: NetName=GND Pin=J8-2
+Added Member To Class: ClassName=EaglesPU Member=Component J8 XT30PW-M

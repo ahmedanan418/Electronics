@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=Servo5 Pin=P1-3
+Removed Pin From Net: NetName=Servo4 Pin=P1-4
+Removed Pin From Net: NetName=Servo3 Pin=P1-5
+Removed Pin From Net: NetName=Servo2 Pin=P1-6
+Removed Pin From Net: NetName=Servo1 Pin=P1-7
+Change Component Footprint: Designator=P1 Old Footprint=Header 2.54X7 New Footprint=Header 2.54X5
+Change Component Comment : Designator=P1 Old Comment=Connector Pinheader 1x7 New Comment=Connector Pinheader 1x5
+Added Pin To Net: NetName=Servo5 Pin=P1-1
+Added Pin To Net: NetName=Servo4 Pin=P1-2
+Added Pin To Net: NetName=Servo3 Pin=P1-3
+Added Pin To Net: NetName=Servo2 Pin=P1-4
+Added Pin To Net: NetName=Servo1 Pin=P1-5

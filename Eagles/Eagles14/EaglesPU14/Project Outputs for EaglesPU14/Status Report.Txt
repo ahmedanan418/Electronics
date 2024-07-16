@@ -1,0 +1,30 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 1:01:59 PM On 3/23/2024
+
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : PCB Document [PU.PcbDoc]
+   Generated File[PU_Copper_Signal_Top.gbr]
+   Generated File[PU_Copper_Signal_1.gbr]
+   Generated File[PU_Copper_Signal_2.gbr]
+   Generated File[PU_Copper_Signal_Bot.gbr]
+   Generated File[PU_Legend_Bot.gbr]
+   Generated File[PU_Soldermask_Bot.gbr]
+   Generated File[PU_Paste_Bot.gbr]
+   Generated File[PU_Legend_Top.gbr]
+   Generated File[PU_Paste_Top.gbr]
+   Generated File[PU_Soldermask_Top.gbr]
+   Generated File[PU_Bottom_Designator.gbr]
+   Generated File[PU_Mechanical_1.gbr]
+   Generated File[PU_Top_Designator.gbr]
+   Generated File[PU_Profile.gbr]
+   Generated File[PU.RUL]
+   Generated File[PU.EXTREP]
+   Generated File[PU.REP]
+
+
+Files Generated   : 17
+Documents Printed : 0
+
+Finished Output Generation At 1:02:03 PM On 3/23/2024
