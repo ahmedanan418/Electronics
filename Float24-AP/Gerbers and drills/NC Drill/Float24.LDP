@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: F:\AP24_Hardware_RnD\AP24_Float\Float24.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=float24-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=float24-slotholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=float24-rectholes.txt|DrillLayers=gtl,gbl
